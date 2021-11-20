@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const WeatherLogo = styled.img`
-    width: 140px;
-    height: 140px;
-    display: flex;
-    margin: 40px auto;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  margin: 40px auto;
 `;
 
 const ChooseCityLabel = styled.span`
@@ -46,23 +46,21 @@ const SearchBox = styled.form`
   }
 `;
 
-
 const CityComponent = (props) => {
-
-    const {updateCity , fetchWeather} = props;
-    return (
-        <div>
-            <WeatherLogo src="/icons/perfect-day.svg"/>
-            <ChooseCityLabel>Find Weather Of Your City</ChooseCityLabel>
-            <SearchBox onSubmit={fetchWeather}>
-                <input 
-                    placeholder = "City"
-                    onChange={(e) => updateCity(e.target.value)}
-                />
-                <button type = "submit">Search</button>
-            </SearchBox>
-        </div>
-    );
-}
+  const { updateCity, fetchWeather } = props;
+  return (
+    <div>
+      <WeatherLogo src="./icons/perfect-day.svg" />
+      <ChooseCityLabel>Find Weather Of Your City</ChooseCityLabel>
+      <SearchBox onSubmit={fetchWeather}>
+        <input
+          placeholder="City"
+          onChange={(e) => updateCity(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </SearchBox>
+    </div>
+  );
+};
 
 export default CityComponent;
